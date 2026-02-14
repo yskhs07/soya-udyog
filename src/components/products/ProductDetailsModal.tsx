@@ -38,6 +38,7 @@ export function ProductDetailsModal({
         <ProductImage
           name={product.name}
           color={product.imagePlaceholder}
+          src={product.images[0]}
           className="h-48 w-full rounded-xl"
         />
 
@@ -94,11 +95,10 @@ export function ProductDetailsModal({
                 <button
                   key={pack.label}
                   onClick={() => setSelectedPack(pack)}
-                  className={`rounded-full border px-3 py-1.5 text-sm font-medium transition-colors cursor-pointer ${
-                    activePack?.label === pack.label
+                  className={`rounded-full border px-3 py-1.5 text-sm font-medium transition-colors cursor-pointer ${activePack?.label === pack.label
                       ? "border-primary-500 bg-primary-50 text-primary-700"
                       : "border-gray-200 text-gray-600 hover:border-gray-300"
-                  }`}
+                    }`}
                 >
                   {pack.label} — {formatCurrency(pack.price)}
                 </button>

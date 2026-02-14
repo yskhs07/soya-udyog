@@ -13,7 +13,7 @@ export const products: Product[] = [
     moisturePct: 12,
     description:
       "High-quality soybean meal with 46% protein content, ideal for animal feed and poultry industry. Sourced and processed in Kota, Rajasthan with strict quality control.",
-    images: [],
+    images: ["/products/soy-meal-01.png"],
     featured: true,
     retailEnabled: false,
     imagePlaceholder: "#2d6a4f",
@@ -30,7 +30,7 @@ export const products: Product[] = [
     moisturePct: 12,
     description:
       "Certified organic soya meal with 44% protein. No chemical processing, suitable for organic feed formulations and export markets.",
-    images: [],
+    images: ["/products/org-meal-02.png"],
     featured: true,
     retailEnabled: false,
     imagePlaceholder: "#1b4332",
@@ -47,7 +47,7 @@ export const products: Product[] = [
     moisturePct: 11,
     description:
       "De-oiled soya cake (DOC) — a high-protein byproduct of soybean oil extraction. Widely used in poultry and aqua feed formulation.",
-    images: [],
+    images: ["/products/doc-03.png"],
     featured: true,
     retailEnabled: false,
     imagePlaceholder: "#40916c",
@@ -64,7 +64,7 @@ export const products: Product[] = [
     moisturePct: 10,
     description:
       "Premium high-protein soybean meal with 48%+ protein content. Designed for high-performance poultry and aquaculture feed applications.",
-    images: [],
+    images: ["/products/hp-meal-04.png"],
     retailEnabled: false,
     imagePlaceholder: "#52b788",
   },
@@ -80,7 +80,7 @@ export const products: Product[] = [
     moisturePct: 10,
     description:
       "Full fat soybean with 38% protein and 18% fat content. High energy feed ingredient for poultry and livestock, retaining natural oils.",
-    images: [],
+    images: ["/products/ff-soya-05.png"],
     retailEnabled: false,
     imagePlaceholder: "#74c69d",
   },
@@ -96,7 +96,7 @@ export const products: Product[] = [
     moisturePct: 11,
     description:
       "Heat-treated (toasted) soya meal with reduced anti-nutritional factors. Improved digestibility for animal feed applications.",
-    images: [],
+    images: ["/products/toast-meal-06.png"],
     retailEnabled: false,
     imagePlaceholder: "#b7e4c7",
   },
@@ -109,7 +109,7 @@ export const products: Product[] = [
     pricePerKg: 120,
     description:
       "Protein-rich soya chunks for everyday cooking. Great meat substitute with 52% protein. Available in convenient retail packs.",
-    images: [],
+    images: ["/products/chunks-07.png"],
     featured: true,
     retailEnabled: true,
     packs: [
@@ -129,7 +129,7 @@ export const products: Product[] = [
     pricePerKg: 80,
     description:
       "Fine-ground soya flour, perfect for baking, rotis, and protein-enriched cooking. High protein, gluten-free alternative.",
-    images: [],
+    images: ["/products/flour-08.png"],
     retailEnabled: true,
     packs: [
       { label: "1 kg Pack", weightKg: 1, price: 80 },
@@ -147,7 +147,7 @@ export const products: Product[] = [
     pricePerKg: 110,
     description:
       "Versatile soya granules for curries, pulao, and snacks. Quick to cook, high in protein, and a great meat alternative.",
-    images: [],
+    images: ["/products/granules-09.png"],
     retailEnabled: true,
     packs: [
       { label: "1 kg Pack", weightKg: 1, price: 110 },
@@ -168,7 +168,7 @@ export const products: Product[] = [
     moisturePct: 10,
     description:
       "Soya hulls — fibrous outer covering of soybean. Used as roughage in cattle and dairy feed. Available in bulk quantities only.",
-    images: [],
+    images: ["/products/hulls-10.png"],
     retailEnabled: false,
     imagePlaceholder: "#8d6e63",
   },

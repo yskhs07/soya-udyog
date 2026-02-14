@@ -1,18 +1,33 @@
+import { useState } from "react";
 import { cn } from "../../utils/cn";
 
 type Props = {
   name: string;
   color: string;
+  src?: string;
   className?: string;
 };
 
-export function ProductImage({ name, color, className }: Props) {
+export function ProductImage({ name, color, src, className }: Props) {
+  const [imgError, setImgError] = useState(false);
+
   const initials = name
     .split(" ")
     .map((w) => w[0])
     .slice(0, 2)
     .join("")
     .toUpperCase();
+
+  if (src && !imgError) {
+    return (
+      <img
+        src={src}
+        alt={name}
+        onError={() => setImgError(true)}
+        className={cn("object-cover rounded-t-xl", className)}
+      />
+    );
+  }
 
   return (
     <div

@@ -30,6 +30,7 @@ export function ProductCard({ product, onRequestQuote, onViewDetails }: Props) {
         <ProductImage
           name={product.name}
           color={product.imagePlaceholder}
+          src={product.images[0]}
           className="h-40 w-full"
         />
       </button>
@@ -76,11 +77,10 @@ export function ProductCard({ product, onRequestQuote, onViewDetails }: Props) {
                 <button
                   key={pack.label}
                   onClick={() => setSelectedPack(pack)}
-                  className={`rounded-full border px-2.5 py-1 text-xs font-medium transition-colors cursor-pointer ${
-                    selectedPack?.label === pack.label
+                  className={`rounded-full border px-2.5 py-1 text-xs font-medium transition-colors cursor-pointer ${selectedPack?.label === pack.label
                       ? "border-primary-500 bg-primary-50 text-primary-700"
                       : "border-gray-200 text-gray-600 hover:border-gray-300"
-                  }`}
+                    }`}
                 >
                   {pack.label}
                 </button>
