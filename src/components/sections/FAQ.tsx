@@ -4,7 +4,7 @@ const faqItems = [
   {
     question: "Where is Shiv Soya located?",
     answer:
-      "We are based in the Industrial Area of Kota, Rajasthan (324005). Our manufacturing and dispatch operations run from this facility.",
+      "We are based at 494, Rajeev Gandhi Nagar, New Rajeev Gandhi Nagar, Kota, Rajasthan (324005). Our manufacturing and dispatch operations run from this facility.",
   },
   {
     question: "What is the minimum order quantity for bulk products?",

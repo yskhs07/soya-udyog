@@ -36,11 +36,11 @@ export function Footer() {
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2">
                 <MapPin size={16} className="mt-0.5 shrink-0 text-primary-400" />
-                <span className="text-primary-200">Industrial Area, Kota, Rajasthan 324005</span>
+                <span className="text-primary-200">494, Rajeev Gandhi Nagar, New Rajeev Gandhi Nagar, Kota, Kota, Rajasthan, 324005</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone size={16} className="shrink-0 text-primary-400" />
-                <span className="text-primary-200">+91 98290 00000</span>
+                <span className="text-primary-200">+91 98296 38793</span>
               </li>
               <li className="flex items-center gap-2">
                 <Mail size={16} className="shrink-0 text-primary-400" />

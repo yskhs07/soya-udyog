@@ -32,7 +32,7 @@ export function Contact() {
                 <div>
                   <p className="text-sm font-semibold text-gray-900">Address</p>
                   <p className="text-sm text-gray-600">
-                    Industrial Area, Kota, Rajasthan 324005
+                    494, Rajeev Gandhi Nagar, New Rajeev Gandhi Nagar, Kota, Kota, Rajasthan, 324005
                   </p>
                 </div>
               </div>
@@ -40,7 +40,7 @@ export function Contact() {
                 <Phone className="h-5 w-5 text-primary-600 mt-0.5 shrink-0" />
                 <div>
                   <p className="text-sm font-semibold text-gray-900">Phone</p>
-                  <p className="text-sm text-gray-600">+91 98290 00000</p>
+                  <p className="text-sm text-gray-600">+91 98296 38793</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
@@ -53,7 +53,7 @@ export function Contact() {
             </div>
 
             <a
-              href="https://wa.me/919829000000?text=Hi%20Soya%20Udyog%2C%20I%27m%20interested%20in%20your%20products"
+              href="https://wa.me/919829638793?text=Hi%20Shiv%20Soya%2C%20I%27m%20interested%20in%20your%20products"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 rounded-xl bg-green-500 px-6 py-3 text-white font-semibold hover:bg-green-600 transition-colors no-underline"
