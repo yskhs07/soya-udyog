@@ -8,7 +8,7 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <Leaf className="h-6 w-6 text-primary-400" />
-              <span className="text-lg font-bold text-white">Soya Udyog</span>
+              <span className="text-lg font-bold text-white">Shiv Soya</span>
             </div>
             <p className="text-sm text-primary-200 leading-relaxed">
               Leading manufacturer and supplier of premium soya products from
@@ -51,7 +51,7 @@ export function Footer() {
         </div>
 
         <div className="mt-10 border-t border-primary-800 pt-6 text-center text-xs text-primary-300">
-          &copy; {new Date().getFullYear()} Soya Udyog, Kota, Rajasthan. All
+          &copy; {new Date().getFullYear()} Shiv Soya, Kota, Rajasthan. All
           rights reserved.
         </div>
       </div>

@@ -4,7 +4,7 @@ import {
   useState,
   useEffect,
   useCallback,
-  ReactNode,
+  type ReactNode,
 } from "react";
 import type { CartItem, Pack } from "../types";
 import * as api from "../api/mockApi";

@@ -54,7 +54,7 @@ export function ProductDetailsModal({
         </div>
 
         <p className="text-sm text-gray-500">
-          Soya Udyog &bull; {product.location}
+          Shiv Soya &bull; {product.location}
         </p>
 
         <p className="text-sm text-gray-700 leading-relaxed">
@@ -96,8 +96,8 @@ export function ProductDetailsModal({
                   key={pack.label}
                   onClick={() => setSelectedPack(pack)}
                   className={`rounded-full border px-3 py-1.5 text-sm font-medium transition-colors cursor-pointer ${activePack?.label === pack.label
-                      ? "border-primary-500 bg-primary-50 text-primary-700"
-                      : "border-gray-200 text-gray-600 hover:border-gray-300"
+                    ? "border-primary-500 bg-primary-50 text-primary-700"
+                    : "border-gray-200 text-gray-600 hover:border-gray-300"
                     }`}
                 >
                   {pack.label} — {formatCurrency(pack.price)}

@@ -1,4 +1,4 @@
-import { SelectHTMLAttributes } from "react";
+import type { SelectHTMLAttributes } from "react";
 import { cn } from "../../utils/cn";
 
 type Props = SelectHTMLAttributes<HTMLSelectElement> & {

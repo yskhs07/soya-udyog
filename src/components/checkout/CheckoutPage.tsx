@@ -1,47 +1,32 @@
-import { useState, FormEvent } from "react";
+import { useState, type FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
-import { createOrder } from "../../api/mockApi";
-import type { Order } from "../../types";
 import { formatCurrency } from "../../utils/formatCurrency";
 import { Input } from "../ui/Input";
 import { Button } from "../ui/Button";
-import { PaymentPlaceholder } from "./PaymentPlaceholder";
-import { OrderConfirmation } from "./OrderConfirmation";
-import { ArrowLeft } from "lucide-react";
+import { Modal } from "../ui/Modal";
+import { ArrowLeft, CreditCard } from "lucide-react";
 
 export function CheckoutPage() {
   const { items, totalAmount } = useCart();
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
-  const [order, setOrder] = useState<Order | null>(null);
-  const [paymentMethod] = useState<"cod">("cod");
+  const [showPaymentModal, setShowPaymentModal] = useState(false);
+  const [formData, setFormData] = useState<Record<string, string>>({});
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setLoading(true);
     const fd = new FormData(e.currentTarget);
-    const result = await createOrder({
-      items: [...items],
-      customer: {
-        name: fd.get("name") as string,
-        phone: fd.get("phone") as string,
-        email: (fd.get("email") as string) || undefined,
-        address: fd.get("address") as string,
-        city: fd.get("city") as string,
-        state: fd.get("state") as string,
-        pincode: fd.get("pincode") as string,
-      },
-      paymentMethod,
-      total: totalAmount,
-    });
-    setLoading(false);
-    setOrder(result);
-  };
 
-  if (order) {
-    return <OrderConfirmation order={order} />;
-  }
+    // Store form data
+    const data: Record<string, string> = {};
+    fd.forEach((value, key) => {
+      data[key] = value.toString();
+    });
+    setFormData(data);
+
+    // Show payment gateway message
+    setShowPaymentModal(true);
+  };
 
   if (items.length === 0) {
     return (
@@ -87,11 +72,22 @@ export function CheckoutPage() {
           </div>
 
           <div className="rounded-xl border bg-white p-6">
-            <PaymentPlaceholder selected={paymentMethod} onSelect={() => {}} />
+            <h3 className="text-sm font-semibold text-gray-900 mb-3">Payment Method</h3>
+            <div className="flex w-full items-center gap-4 rounded-lg border-2 border-primary-500 bg-primary-50 p-4">
+              <CreditCard size={24} className="text-primary-600" />
+              <div>
+                <p className="text-sm font-semibold text-gray-900">
+                  Online Payment
+                </p>
+                <p className="text-xs text-gray-500">
+                  UPI, Cards, Net Banking, Wallets
+                </p>
+              </div>
+            </div>
           </div>
 
-          <Button type="submit" fullWidth disabled={loading}>
-            {loading ? "Placing Order..." : `Place Order — ${formatCurrency(totalAmount)}`}
+          <Button type="submit" fullWidth>
+            Place Order — {formatCurrency(totalAmount)}
           </Button>
         </form>
 
@@ -121,6 +117,51 @@ export function CheckoutPage() {
           </div>
         </div>
       </div>
+
+      <Modal
+        open={showPaymentModal}
+        onClose={() => setShowPaymentModal(false)}
+        title="Payment Gateway Integration"
+      >
+        <div className="space-y-4">
+          <div className="rounded-lg bg-amber-50 border border-amber-200 p-4">
+            <p className="text-sm text-amber-800 font-medium">
+              🚧 Payment Gateway Will Be Integrated Soon
+            </p>
+            <p className="text-xs text-amber-700 mt-2">
+              We're currently setting up secure payment options for you. In the meantime, please contact us directly to complete your order.
+            </p>
+          </div>
+
+          <div className="space-y-2">
+            <h4 className="font-semibold text-gray-900 text-sm">Your Order Details:</h4>
+            <div className="text-sm space-y-1 text-gray-600">
+              <p><span className="font-medium">Name:</span> {formData.name}</p>
+              <p><span className="font-medium">Phone:</span> {formData.phone}</p>
+              <p><span className="font-medium">Address:</span> {formData.address}, {formData.city}, {formData.state} - {formData.pincode}</p>
+              <p className="mt-3 font-semibold text-gray-900">
+                Total Amount: {formatCurrency(totalAmount)}
+              </p>
+            </div>
+          </div>
+
+          <div className="flex gap-3 pt-4">
+            <Button
+              variant="secondary"
+              fullWidth
+              onClick={() => setShowPaymentModal(false)}
+            >
+              Close
+            </Button>
+            <Button
+              fullWidth
+              onClick={() => navigate("/")}
+            >
+              Continue Shopping
+            </Button>
+          </div>
+        </div>
+      </Modal>
     </div>
   );
 }

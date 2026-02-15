@@ -2,7 +2,7 @@ import { Accordion } from "../ui/Accordion";
 
 const faqItems = [
   {
-    question: "Where is Soya Udyog located?",
+    question: "Where is Shiv Soya located?",
     answer:
       "We are based in the Industrial Area of Kota, Rajasthan (324005). Our manufacturing and dispatch operations run from this facility.",
   },

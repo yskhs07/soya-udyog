@@ -16,7 +16,7 @@ export function Header() {
         <Link to="/" className="flex items-center gap-2 no-underline">
           <Leaf className="h-7 w-7 text-primary-600" />
           <span className="text-lg font-bold text-gray-900">
-            Soya Udyog
+            Shiv Soya
           </span>
         </Link>
 
@@ -24,7 +24,7 @@ export function Header() {
           <button onClick={() => scrollTo("products")} className="hover:text-primary-700 cursor-pointer bg-transparent border-none p-0">
             Products
           </button>
-          <button onClick={() => scrollTo("about")} className="hover:text-primary-700 cursor-pointer bg-transparent border-none p-0">
+          <button onClick={() => scrollTo("wholesale")} className="hover:text-primary-700 cursor-pointer bg-transparent border-none p-0">
             About
           </button>
           <button onClick={() => scrollTo("faq")} className="hover:text-primary-700 cursor-pointer bg-transparent border-none p-0">

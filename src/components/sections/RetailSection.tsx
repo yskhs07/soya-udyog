@@ -64,19 +64,25 @@ export function RetailSection() {
 
           <div className="grid grid-cols-2 gap-4">
             {[
-              { name: "Soya Chunks", color: "#d4a373" },
-              { name: "Soya Flour", color: "#e9c46a" },
-              { name: "Soya Granules", color: "#e76f51" },
-              { name: "More Products", color: "#2a9d8f" },
+              { name: "Soya Chunks", image: "/products/chunks-07.png" },
+              { name: "Soya Flour", image: "/products/flour-08.png" },
+              { name: "Soya Granules", image: "/products/granules-09.png" },
+              { name: "More Products", image: "/products/more-products.png" },
             ].map((item) => (
               <div
                 key={item.name}
-                className="flex items-center justify-center rounded-xl text-white font-bold text-lg h-36"
-                style={{
-                  background: `linear-gradient(135deg, ${item.color}, ${item.color}cc)`,
-                }}
+                className="relative overflow-hidden rounded-xl h-36 group cursor-pointer"
               >
-                {item.name}
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center pb-4">
+                  <span className="text-white font-bold text-lg">
+                    {item.name}
+                  </span>
+                </div>
               </div>
             ))}
           </div>

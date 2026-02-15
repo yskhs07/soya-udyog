@@ -54,7 +54,7 @@ export function ProductCard({ product, onRequestQuote, onViewDetails }: Props) {
         </button>
 
         <p className="mt-1 text-xs text-gray-500">
-          Soya Udyog &bull; {product.location}
+          Shiv Soya &bull; {product.location}
         </p>
 
         {showB2B && (
@@ -78,8 +78,8 @@ export function ProductCard({ product, onRequestQuote, onViewDetails }: Props) {
                   key={pack.label}
                   onClick={() => setSelectedPack(pack)}
                   className={`rounded-full border px-2.5 py-1 text-xs font-medium transition-colors cursor-pointer ${selectedPack?.label === pack.label
-                      ? "border-primary-500 bg-primary-50 text-primary-700"
-                      : "border-gray-200 text-gray-600 hover:border-gray-300"
+                    ? "border-primary-500 bg-primary-50 text-primary-700"
+                    : "border-gray-200 text-gray-600 hover:border-gray-300"
                     }`}
                 >
                   {pack.label}

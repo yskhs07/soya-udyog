@@ -8,6 +8,14 @@ export function Hero() {
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-primary-800 via-primary-700 to-primary-900">
+      <div className="absolute inset-0">
+        <img
+          src="/hero-banner.png"
+          alt="Soya Products"
+          className="w-full h-full object-cover opacity-30"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-900/90 via-primary-800/80 to-primary-900/70" />
+      </div>
       <div className="absolute inset-0 opacity-10">
         <div className="absolute -right-20 -top-20 h-96 w-96 rounded-full bg-white" />
         <div className="absolute -left-20 bottom-0 h-72 w-72 rounded-full bg-white" />
